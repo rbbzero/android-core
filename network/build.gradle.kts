@@ -36,20 +36,22 @@ android {
     }
 }
 
+//noinspection UseTomlInstead
 dependencies {
 
     implementation(project(":core:shared"))
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
 
-    implementation(libs.hilt.android)
-    kapt(libs.hilt.android.compiler)
+    implementation("com.google.dagger:hilt-android:2.51.1")
+    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
 
-    implementation(libs.okhttp)
-    implementation(libs.okhttp.logging)
-    api(libs.retrofit)
-    implementation(libs.retrofit.converter.kotlinx.serialization)
+    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.12.0"))
+    implementation("com.squareup.okhttp3:okhttp")
+    implementation("com.squareup.okhttp3:logging-interceptor")
+
+    implementation(platform("com.squareup.retrofit2:retrofit-bom:2.11.0"))
+    api("com.squareup.retrofit2:retrofit")
+    implementation("com.squareup.retrofit2:converter-kotlinx-serialization")
 }
 
 // Allow references to generated code

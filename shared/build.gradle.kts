@@ -39,13 +39,15 @@ android {
 dependencies {
 
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
 
-    implementation(libs.hilt.android)
-    kapt(libs.hilt.android.compiler)
+//    implementation(libs.hilt.android)
+//    kapt(libs.hilt.android.compiler)
 
-    api(libs.kotlinx.serialization.json)
+    implementation("com.google.dagger:hilt-android:2.51.1")
+    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
+
+//    api(libs.kotlinx.serialization.json)
+    api("org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.0")
 }
 
 // Allow references to generated code

@@ -1,6 +1,6 @@
 package com.rb.core.shared.di
 
-import com.rb.and.module.shared.BuildConfig
+import com.rb.core.shared.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
